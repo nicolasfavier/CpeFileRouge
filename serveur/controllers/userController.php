@@ -9,7 +9,11 @@
 			insertUser($user);
 			
 			header('Location: /mapage.php'); 
-		}			
+		}	
+		if($_GET['action'] == "getUser"){
+			$user = createUser();
+			getUser($user);
+		}		
 	}
 	else{}
 

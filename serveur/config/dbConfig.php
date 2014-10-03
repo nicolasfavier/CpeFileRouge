@@ -1,14 +1,14 @@
 <?php
 
-	function getDB($dbName='test'){
+	function getDB($dbName='filerouge'){
 
 		$db = null;
 
 		// configuration
 		$dbhost 	= "localhost";
-		$dbname		= "test";
-		$dbuser		= "filerouge";
-		$dbpass		= "pass";
+		$dbname		= "filerouge";
+		$dbuser		= "client";
+		$dbpass		= "client";
 		 
 		// database connection
 		try{

@@ -8,7 +8,7 @@
 
 		<h1>Bienvenue sur le site des acupuncteurs </h1>
 
-		<form class="form-horizontal" role="form" method="POST" action="serveur/controllers/userController.php?action=createUser">
+		<form class="form-horizontal" role="form" method="POST" action="serveur/controllers/userController.php?action=getUser">
 		  <div class="form-group">
 		    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 		    <div class="col-sm-10">
