@@ -6,7 +6,7 @@
 	?>
 
 
-		<h1>Bienvenue sur le site des acupuncteurs </h1>
+		<h1>Bienvenue sur le site des acupuncteurs</h1>
 
 		<form class="form-horizontal" role="form" method="POST" action="serveur/controllers/userController.php?action=createUser">
 		  <div class="form-group">

@@ -7,8 +7,8 @@
 		if($_GET['action'] == "createUser"){
 			$user = createUser();			
 			insertUser($user);
-			
-			header('Location: /mapage.php'); 
+
+			header('Location: ../../home.php'); 
 		}			
 	}
 	else{}
