@@ -12,15 +12,9 @@
 		}	
 		if($_GET['action'] == "getUser"){
 			$user = createUser();
-			$dbUser = getUser($user);
+			getUser($user);
 
-			if ($dbUser)
-			{
-				header('Location: ../../home.php'); 
-			}
-			else{
-				header('Location: ../../login.php'); 
-			}
+			header('Location: ../../home.php'); 
 		}
 		else{}
 	}
