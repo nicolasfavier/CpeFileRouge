@@ -8,14 +8,16 @@
 			$user = createUser();			
 			insertUser($user);
 			
-			header('Location: /mapage.php'); 
+			header('Location: ../../home.php');  
 		}	
 		if($_GET['action'] == "getUser"){
 			$user = createUser();
 			getUser($user);
-		}		
+
+			header('Location: ../../home.php'); 
+		}
+		else{}
 	}
-	else{}
 
 	function createUser(){
 		$email = $_POST['inputEmail'];
