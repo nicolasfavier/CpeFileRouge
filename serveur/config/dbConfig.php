@@ -7,8 +7,8 @@
 		// configuration
 		$dbhost 	= "localhost";
 		$dbname		= "test";
-		$dbuser		= "root";
-		$dbpass		= "cpelyon";
+		$dbuser		= "filerouge";
+		$dbpass		= "pass";
 		 
 		// database connection
 		try{
