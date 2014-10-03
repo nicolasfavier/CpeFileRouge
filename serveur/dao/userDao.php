@@ -22,6 +22,7 @@ function insertUser($user){
 
 function getUser($user){
 //DB get
+	$res = null;
 	$bdd = getDB('filerouge');
 
 	try{
@@ -32,17 +33,17 @@ function getUser($user){
 		    'thepassword' => $user->getPassword()
 		    ));	
 
-		if ($req->fetch() == false)
-	    {
-	        echo "n existe pas";
-	    }
-	    else
-	    {
-	        echo "existe";
-	    }
+		$objreturn = $req->fetch();
+
+		if( $objreturn ) {
+		  $res = $objreturn;
+		} 
 	}
 	catch(PDOException $e){
 		die('Erreur: '.$e->getMessage());
+	}
+	finally{
+		return $res;
 	}
 }
 
