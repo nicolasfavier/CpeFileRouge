@@ -1,7 +1,10 @@
 	<?php 
-		$header = 'Sign Up Page';
-		include("header.php"); 
+		include("utils.php");
+		$smarty = getSmarty();
+		$smarty->assign( "header","Sign up page");
+		$smarty->display("tpl/header.tpl");
 	?>
+
 		<h1>Pour plus de fonctionalitées créez un compte</h1>
 
 		<form class="form-horizontal" role="form" method="POST" action="connectivity.php">
@@ -34,4 +37,6 @@
 		Vous avez déjà un compte? <a href="login.php">se connecter</a><br>
 		<a href="home.php">Allez directement à la page d'accueil.</a>
 
- 	<?php include("footer.php"); ?>
+	<?php 
+ 		$smarty->display("tpl/footer.tpl"); 
+ 	?>

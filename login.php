@@ -1,7 +1,10 @@
 	<?php 
-		$header = 'Login Page';
-		include("header.php"); 
+		include("utils.php");
+		$smarty = getSmarty();
+		$smarty->assign( "header","Login Page");
+		$smarty->display("tpl/header.tpl");
 	?>
+
 
 		<h1>Bienvenue sur le site des acupuncteurs</h1>
 
@@ -37,4 +40,6 @@
 		<a href="home.php">Allez directement à la page d'accueil.</a><br>
 		<a href="signup.php">Créer un compte.</a>
 
- 	<?php include("footer.php"); ?>
+	<?php 
+ 		$smarty->display("tpl/footer.tpl"); 
+ 	?>

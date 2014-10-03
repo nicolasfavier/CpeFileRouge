@@ -1,11 +1,19 @@
-
 	<?php 
-		$header = 'Bibliographie';
-		$navActive = 'bibliographie';
-		include("header.php"); 
-		include("nav.php"); 
+		include("utils.php");
+		$smarty = getSmarty();
+		$smarty->assign( "header","Bibliographie");
+		$smarty->display("tpl/header.tpl");
+
+		$smarty->assign(array(
+        "homeactive" => "",
+        "bibliographieactive" => 'class="active"',
+        "devlogsactive" => ""
+        ));
+        $smarty->display("tpl/nav.tpl");
 	?>
 		<div class="col-sm-9">
 			Bibliographie
 	    </div><!-- ./col-sm-9 -->
- 	<?php include("footer.php"); ?>
+ 	<?php 
+ 		$smarty->display("tpl/footer.tpl"); 
+ 	?>
