@@ -1,6 +1,5 @@
 <?php
-class User
-{
+class User{
     // property declaration
     private $email;
     private $password;

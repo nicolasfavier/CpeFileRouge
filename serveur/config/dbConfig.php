@@ -1,8 +1,6 @@
-<?php 
+<?php
 
-class Connexion{
-
-	public function getDB($dbName='test'){
+	function getDB($dbName='test'){
 
 		$db = null;
 
@@ -23,5 +21,5 @@ class Connexion{
 
 		return $db;
 	}
-}
+
 ?>
