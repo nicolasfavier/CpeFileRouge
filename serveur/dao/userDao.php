@@ -8,7 +8,7 @@ function insertUser($user){
 	$bdd = getDB('filerouge');
 
 	try{
-		$req = $bdd->prepare("INSERT INTO user(email, password) VALUES (:email,:password)");
+		$req = $bdd->prepare("INSERT INTO users(email, password) VALUES (:email,:password)");
 		$req->execute(array(
 		    'email' => $user->getEmail(),
 		    'password' => $user->getPassword()
@@ -36,14 +36,12 @@ function getUser($user){
 		$objreturn = $req->fetch();
 
 		if( $objreturn ) {
-		  $res = $objreturn;
+		  	$res = $objreturn;
+			return $res;		  
 		} 
 	}
 	catch(PDOException $e){
 		die('Erreur: '.$e->getMessage());
-	}
-	finally{
-		return $res;
 	}
 }
 

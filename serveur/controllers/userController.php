@@ -4,25 +4,30 @@
 		include_once('../models/User.class.php');
 		include_once("../dao/userDao.php");
 
-		if($_GET['action'] == "createUser"){
-			$user = createUser();			
-			insertUser($user);
-			
-			header('Location: ../../home.php');  
-		}	
+	    if($_GET['action'] == "createUser"){
+	      $user = createUser();
+	      insertUser($user);
+
+	      session_start();
+	      $_SESSION['User'] = serialize($user);
+	      header('Location: ../../home.php');
+	    }	
+
 		if($_GET['action'] == "getUser"){
 			$user = createUser();
 			$dbUser = getUser($user);
 
 			if ($dbUser)
 			{
+			    session_start();
+	      		$_SESSION['User'] = serialize($dbUser);
 				header('Location: ../../home.php'); 
 			}
 			else{
 				header('Location: ../../login.php'); 
 			}
 		}
-		else{}
+		
 	}
 
 	function createUser(){
@@ -37,6 +42,10 @@
 		}
 		else{ return null; }			
 	}
+
+	function logOutUser(){
+		session_destroy();
+	} 
 
 	function verifyUserInput($email, $password){
 		// check le mail et password

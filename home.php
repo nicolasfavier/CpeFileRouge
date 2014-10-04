@@ -3,13 +3,17 @@
 		include("utils.php");
 		$smarty = getSmarty();
 		$smarty->assign( "header","Home");
+		
 		$smarty->display("tpl/header.tpl");
 
 		$smarty->assign(array(
-        "homeactive" => 'class="active"',
-        "bibliographieactive" => "",
-        "devlogsactive" => ""
+	        "homeactive" => 'class="active"',
+	        "bibliographieactive" => "",
+	        "devlogsactive" => "",
+        	"emailUser" => 
         ));
+
+        $smarty->display("tpl/topNavBar.tpl");
         $smarty->display("tpl/nav.tpl");
 	?>
 		<div class="col-sm-9">

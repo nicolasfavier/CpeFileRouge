@@ -7,7 +7,7 @@
 
 		<h1>Pour plus de fonctionalitées créez un compte</h1>
 
-		<form class="form-horizontal" role="form" method="POST" action="connectivity.php">
+		<form class="form-horizontal" role="form" method="POST" action="serveur/controllers/userController.php?action=createUser">
 		  <div class="form-group">
 		    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
 		    <div class="col-sm-10">
