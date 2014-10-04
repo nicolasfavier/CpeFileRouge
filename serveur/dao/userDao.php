@@ -39,6 +39,7 @@ function getUser($user){
 		  	$res = $objreturn;
 			return $res;		  
 		} 
+		return $res;
 	}
 	catch(PDOException $e){
 		die('Erreur: '.$e->getMessage());
