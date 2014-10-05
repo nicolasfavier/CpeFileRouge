@@ -10,7 +10,7 @@
 	        "homeactive" => 'class="active"',
 	        "bibliographieactive" => "",
 	        "devlogsactive" => "",
-        	"emailUser" => 
+        	"emailUser" => ""
         ));
 
         $smarty->display("tpl/topNavBar.tpl");
