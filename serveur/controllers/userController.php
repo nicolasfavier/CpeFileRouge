@@ -1,20 +1,29 @@
 <?php
+	
+	$error = null;
+	$regex = "/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/"; 
 
 	if (isset($_GET['action'])) {
 		include_once('../models/User.class.php');
 		include_once("../dao/userDao.php");
 
 	    if($_GET['action'] == "createUser"){
-	      $user = createUser();
-	      insertUser($user);
+	      $user = createUserSignUp();
 
-	      session_start();
-	      $_SESSION['User'] = serialize($user);
-	      header('Location: ../../home.php');
+	      if($user != null){
+		      insertUser($user);
+
+		      session_start();
+		      $_SESSION['User'] = serialize($user);
+		      header('Location: ../../home.php');
+		  }
+		  else{
+		  	  header('Location: ../../signup.php?error='.$error);
+		  }
 	    }	
 
 		if($_GET['action'] == "getUser"){
-			$user = createUser();
+			$user = createUserSignIn();
 			$dbUser = getUser($user);
 
 			if ($dbUser)
@@ -24,7 +33,7 @@
 				header('Location: ../../home.php'); 
 			}
 			else{
-				header('Location: ../../login.php'); 
+				header('Location: ../../login.php?error=The password you entered is incorrect. Please try again'); 
 			}
 		}
 
@@ -35,11 +44,12 @@
 		
 	}
 
-	function createUser(){
+	function createUserSignUp(){
 		$email = $_POST['inputEmail'];
 		$password = $_POST['inputPassword'];
+		$repeatPassword = $_POST['inputRepeatPassword'];
 
-		if(verifyUserInput($email,$password)){
+		if(verifySignUp($email,$password,$repeatPassword)){
 			$user = new User();
 			$user->setEmail($email);
 			$user->setPassword($password);	
@@ -48,13 +58,46 @@
 		else{ return null; }			
 	}
 
+	function createUserSignIn(){
+		$email = $_POST['inputEmail'];
+		$password = $_POST['inputPassword'];
+
+		if(verifySignIn($email,$password)){
+			$user = new User();
+			$user->setEmail($email);
+			$user->setPassword($password);	
+			return $user;
+		}
+		else{ return null; }			
+	}	
+
 	function logOutUser(){
 		session_start();
 		session_unset();		
 	} 
 
-	function verifyUserInput($email, $password){
-		// check le mail et password
+	function verifySignIn($email, $password){
+		global $regex, $error ;
+		
+		if ( !preg_match( $regex, $email ) ) {
+		     $error = $email . " is an invalid email. Please try again.";
+		     return false;
+		} 
+
 		return true;
-	}
+	}	
+
+	function verifySignUp($email, $password, $repeatPassword){
+		global $regex, $error ;
+		if($password != $repeatPassword){
+			$error = "Both of the passwords that you typed aren't the same! Can you retry please.";
+			return false;
+		}
+		if ( !preg_match( $regex, $email ) ) {
+		     $error = $email . " is an invalid email. Please try again.";
+		     return false;
+		} 
+
+		return true;
+	}	
 ?>

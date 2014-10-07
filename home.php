@@ -29,9 +29,7 @@
 		if(isset($_SESSION["User"])){
 			$smarty->display("tpl/search.tpl");
 		}
-//echo('<pre>');
-//print_r($pathologies);
-//echo('</pre>');
+
 		foreach ($pathologies as $row ) {
 			$smarty->assign( "descPatho", $row[0]);
 			$smarty->assign( "descSymptome", $row[1]);
