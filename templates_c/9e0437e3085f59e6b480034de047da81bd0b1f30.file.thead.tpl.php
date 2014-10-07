@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-04 15:25:22
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-07 15:39:10
          compiled from "tpl\thead.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:30197542fea9d3c71f9-90558052%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9e0437e3085f59e6b480034de047da81bd0b1f30' => 
     array (
       0 => 'tpl\\thead.tpl',
-      1 => 1412429120,
+      1 => 1412688993,
       2 => 'file',
     ),
   ),
@@ -22,10 +22,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php if ($_valid && !is_callable('content_542fea9d49a6a4_05734133')) {function content_542fea9d49a6a4_05734133($_smarty_tpl) {?><table class="table table-bordered table-hover">
 		<thead>
 	        <tr>
-	          <th>#</th>
-	          <th>description Patho</th>
-	          <th>description Symptome</th>
-	          <th>description Smeridien</th>
+				<th>#</th>
+				<th>description Patho</th>
+				<th>description Symptome</th>
+				<th>description Meridien</th>
 	        </tr>
 	    </thead>
 	<tbody>

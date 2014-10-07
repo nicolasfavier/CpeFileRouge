@@ -1,5 +1,6 @@
 
 	<?php 
+		session_start();
 		include("utils.php");
 		$smarty = getSmarty();
 		$smarty->assign( "header","Home");
@@ -22,26 +23,23 @@
 <?php
 
 		include_once("serveur/dao/pathologieDao.php");
-
-		
+	
 		$pathologies = getSummary();			
-
 		$smarty->display("tpl/thead.tpl");
+		if(isset($_SESSION["User"])){
+			$smarty->display("tpl/search.tpl");
+		}
 //echo('<pre>');
 //print_r($pathologies);
 //echo('</pre>');
 		foreach ($pathologies as $row ) {
-			
 			$smarty->assign( "descPatho", $row[0]);
 			$smarty->assign( "descSymptome", $row[1]);
 			$smarty->assign( "nomMeridien", $row[2]);
 			$smarty->display("tpl/row.tpl");
-
 		}	
 
-		echo( "</tbody>
-		    </table>");
-
+		$smarty->display("tpl/tfooter.tpl");
 
 ?>
 	    </div><!-- ./col-sm-9 -->

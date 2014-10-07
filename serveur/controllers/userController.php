@@ -27,6 +27,11 @@
 				header('Location: ../../login.php'); 
 			}
 		}
+
+		if($_GET['action'] == "logOut"){
+			logOutUser();
+			header('Location: ../../login.php'); 
+		}
 		
 	}
 
@@ -44,7 +49,8 @@
 	}
 
 	function logOutUser(){
-		session_destroy();
+		session_start();
+		session_unset();		
 	} 
 
 	function verifyUserInput($email, $password){
