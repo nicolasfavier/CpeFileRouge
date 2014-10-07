@@ -10,7 +10,6 @@ function getTbale(){
 	$searchsymptome = "";
 	$searchmeridien = "";
 
-echo("flavien aime la : ".$searchmeridien);
 	if(isset($_POST['searchpatho']) && isset($_POST['searchsymptome']) && isset($_POST['searchmeridien'])){
 		$searchpatho = trim($_POST['searchpatho']);
 		$searchsymptome = trim($_POST['searchsymptome']);
@@ -73,15 +72,15 @@ function getResearchResult( $searchpatho, $searchsymptome, $searchmeridien){
 		$condition = "SELECT patho.desc,symptome.desc, meridien.nom  FROM meridien,symptPatho, symptome, patho WHERE symptPatho.idS = symptome.idS AND symptPatho.idP = patho.idP AND meridien.code = patho.mer";
 
 		if (!empty($searchpatho)){
-			$condition = $condition." AND patho.desc='" . $searchpatho."'";
+			$condition = $condition." AND patho.desc like '%" . $searchpatho."%'";
 		}
 
 		if (!empty($searchsymptome)){
-			$condition = $condition." AND symptome.desc='" . $searchsymptome."'";
+			$condition = $condition." AND symptome.desc like '%" . $searchsymptome."%'";
 		}
 
 		if (!empty($searchmeridien)){
-			$condition = $condition." AND meridien.nom='" . $searchmeridien."'";
+			$condition = $condition." AND meridien.nom like '%" . $searchmeridien."%'";
 		}
 
 		$req = $bdd->prepare($condition);
