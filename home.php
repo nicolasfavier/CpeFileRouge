@@ -23,8 +23,9 @@
 <?php
 
 		include_once("serveur/dao/pathologieDao.php");
-	
-		$pathologies = getSummary();			
+		
+		
+		$pathologies = getTbale();			
 		$smarty->display("tpl/thead.tpl");
 		if(isset($_SESSION["User"])){
 			$smarty->display("tpl/search.tpl");
