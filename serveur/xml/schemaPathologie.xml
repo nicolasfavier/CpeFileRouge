@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="pathologie">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:attribute type="xs:int" name="idP"/>
+      <xs:element name="nom" type="xs:string"/>
+      <xs:element name="type" type="xs:string"/>
+      <xs:element name="meridien" type="xs:meridien"/>
+      <xs:element name="ListSymptomes" type="xs:ListSymptomes"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="meridien">
+  <xs:complexType>
+    <xs:sequence>
+	  <xs:attribute type="xs:int" name="code"/>
+      <xs:element name="nom" type="xs:string"/>
+      <xs:element name="element" type="xs:string"/>
+      <xs:element name="yin" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="ListSymptomes">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="symptome" maxOccurs="unbounded" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element type="xs:string" name="desc"/>
+          </xs:sequence>
+          <xs:attribute type="xs:short" name="idS" use="optional"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="symptome">
+  <xs:complexType>
+    <xs:sequence>
+		<xs:attribute type="xs:int" name="idP"/>
+		<xs:element name="desc" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

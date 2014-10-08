@@ -1,0 +1,15 @@
+<!ELEMENT pathologie (nom, type, meridien, ListSymptomes)>
+<!ELEMENT ListSymptomes (symptome*)>
+<!ELEMENT meridien (nom, element, yin)>
+<!ELEMENT symptome (desc)>
+
+<!ELEMENT nom (#PCDATA)>
+<!ELEMENT type (#PCDATA)>
+<!ELEMENT element (#PCDATA)>
+<!ELEMENT yin (#PCDATA)>
+<!ELEMENT aggr (#PCDATA)>
+<!ELEMENT desc (#PCDATA)>
+
+<!ATTLIST pathologie idP ID mode #FIXED>
+<!ATTLIST meridien code ID mode #FIXED>
+<!ATTLIST symptome idS ID mode #FIXED>
