@@ -1,0 +1,1 @@
+<p>{$symptome}</p><br/>

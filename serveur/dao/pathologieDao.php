@@ -36,7 +36,7 @@ function getResearchResult( $searchpatho, $searchtype, $searchmeridien){
 
 	try{
 
-		$condition = "SELECT patho.desc, patho.type, meridien.nom  FROM meridien, patho WHERE meridien.code = patho.mer";
+		$condition = "SELECT patho.desc, patho.type, meridien.nom, patho.idP  FROM meridien, patho WHERE meridien.code = patho.mer";
 
 		if (!empty($searchpatho)){
 			$condition = $condition." AND patho.desc like '%" . $searchpatho."%'";
@@ -73,8 +73,8 @@ function getResearchResultFromKeyWords( $keyWords){
 
 	try{
 
-		$condition = "SELECT patho.desc, patho.type, meridien.nom  FROM meridien, patho WHERE meridien.code = patho.mer";
-		
+		$condition = "SELECT patho.desc,patho.type, meridien.nom,  patho.idP FROM keySympt,keywords,symptome, symptPatho,patho,meridien WHERE keywords.idK = keySympt.idK AND keywords.name like :keywords and symptome.idS = keySympt.idS and symptPatho.idS = symptome.idS AND symptPatho.idP = patho.idP AND meridien.code = patho.mer"; 
+
 		$req = $bdd->prepare($condition);
 
 		$req->execute(array(
@@ -92,5 +92,30 @@ function getResearchResultFromKeyWords( $keyWords){
 	}
 }
 
+
+
+function findPathoSymptome( $idP){
+	$bdd = getDB('filerouge');
+	$res = null;
+
+	try{
+
+		$condition = "SELECT symptome.desc FROM symptPatho, symptome WHERE symptPatho.idP  =$idP and  symptome.idS  = symptPatho.idS";
+
+		$req = $bdd->prepare($condition);
+
+		$req->execute();	
+
+		$objreturn = $req->fetchAll();
+
+		if( $objreturn ) {
+			$res = $objreturn;
+		} 
+		return $res;
+	}
+	catch(PDOException $e){
+		die('Erreur: '.$e->getMessage());
+	}
+}
 ?>
 

@@ -23,9 +23,19 @@
 <?php
 
 		include_once("serveur/dao/pathologieDao.php");
-		
+		$pathologies = null;
+
 		if(isset($_GET['action']) && $_GET['action'] == "autocompleteSearch"){
 			$pathologies = getTbaleFromAutocomplete();
+		}
+		else if(isset($_GET['action']) && $_GET['action'] == "findPathoSymptome"){
+			$symptomes = findPathoSymptome($_GET['idp']);
+			if($symptomes != null){
+			foreach ($symptomes as $row ) {
+				$smarty->assign( "symptome", $row[0]);
+				$smarty->display("tpl/symptomesRow.tpl");
+			}	
+		}
 		}
 		else{
 			$pathologies = getTbale();	
@@ -41,6 +51,7 @@
 				$smarty->assign( "descPatho", $row[0]);
 				$smarty->assign( "typePatho", $row[1]);
 				$smarty->assign( "nomMeridien", $row[2]);
+				$smarty->assign( "idP", $row[3]);
 				$smarty->display("tpl/row.tpl");
 			}	
 		}
