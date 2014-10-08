@@ -1,4 +1,2 @@
- $('.selectpicker').selectpicker({
-      size: 4
-  });
+$('#example').popover();
 
