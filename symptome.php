@@ -4,6 +4,7 @@
 	include_once("serveur/dto/UserDto.class.php");
 
 	$smarty = getSmarty();
+
 	$smarty->assign( "header","Bibliographie");
 	$smarty->display("tpl/header.tpl");
 
@@ -16,11 +17,22 @@
 
 	$smarty->assign(array(
 	    "homeactive" => "",
-	    "bibliographieactive" => 'class="active"',
+	    "bibliographieactive" =>"",
 	    "devlogsactive" => ""
     ));
     
     $smarty->display("tpl/nav.tpl");
-    $smarty->display("tpl/Bibliographie.tpl");
+    $smarty->display("tpl/symptomeHeadList.tpl");
+
+    $symptomes = unserialize($_SESSION["symptomes"]);
+
+	if($symptomes != null){
+		foreach ($symptomes as $row ) {
+			$smarty->assign( "symptome", $row[0]);
+			$smarty->display("tpl/symptomesRow.tpl");
+		}	
+	}
+
+	$smarty->display("tpl/symptomeFootList.tpl");	
 	$smarty->display("tpl/footer.tpl"); 
 ?>

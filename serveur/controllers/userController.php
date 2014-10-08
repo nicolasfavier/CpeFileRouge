@@ -1,21 +1,22 @@
 <?php
-	
 	$error = null;
 	$regex = "/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/"; 
 
 	if (isset($_GET['action'])) {
 		include_once('../models/User.class.php');
 		include_once("../dao/userDao.php");
+		include_once('../dto/UserDto.class.php');
 
 	    if($_GET['action'] == "createUser"){
 	      $user = createUserSignUp();
 
 	      if($user != null){
 		      insertUser($user);
+		      $userDto = new UserDto($user);
 
 		      session_start();
-		      $_SESSION['User'] = serialize($user);
-		      header('Location: ../../home.php');
+		      $_SESSION['User'] = serialize($userDto);
+		      header('Location: pathologieController.php');
 		  }
 		  else{
 		  	  header('Location: ../../signup.php?error='.$error);
@@ -29,8 +30,9 @@
 			if ($dbUser)
 			{
 			    session_start();
-	      		$_SESSION['User'] = serialize($dbUser);
-				header('Location: ../../home.php'); 
+			    $userDto = new UserDto($user);
+	      		$_SESSION['User'] = serialize($userDto);
+				header('Location: pathologieController.php'); 
 			}
 			else{
 				header('Location: ../../login.php?error=The password you entered is incorrect. Please try again'); 

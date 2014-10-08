@@ -1,1 +1,1 @@
-<p>{$symptome}</p><br/>
+<li>{$symptome}</li>

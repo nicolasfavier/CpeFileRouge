@@ -37,7 +37,7 @@
 		  </div>
 		</form>
 
-		<a href="home.php">Allez directement à la page d'accueil.</a><br>
+		<a href="serveur/controllers/pathologieController.php">Allez directement à la page d'accueil.</a><br>
 		<a href="signup.php">Créer un compte.</a>
 
 	<?php 

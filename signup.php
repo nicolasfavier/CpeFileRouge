@@ -35,7 +35,7 @@
 		</form>
 
 		Vous avez déjà un compte? <a href="login.php">se connecter</a><br>
-		<a href="home.php">Allez directement à la page d'accueil.</a>
+		<a href="serveur/controllers/pathologieController.php">Allez directement à la page d'accueil.</a>
 
 	<?php 
  		if(isset($_GET['error'])){

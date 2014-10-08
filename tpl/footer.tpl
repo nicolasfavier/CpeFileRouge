@@ -1,3 +1,4 @@
+  	</div><!-- ./col-sm-9 -->
    </div><!-- ./container -->
 	<!-- jquery -->
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

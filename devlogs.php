@@ -1,21 +1,26 @@
+<?php 
+	session_start();
+	include("utils.php");
+	include_once("serveur/dto/UserDto.class.php");
 
-	<?php 
-		include("utils.php");
-		$smarty = getSmarty();
-		$smarty->assign( "header","Devlogs");
-		$smarty->display("tpl/header.tpl");
+	$smarty = getSmarty();
+	$smarty->assign( "header","Devlogs");
+	$smarty->display("tpl/header.tpl");
 
-		$smarty->assign(array(
-        "homeactive" => "",
-        "bibliographieactive" => "",
-        "devlogsactive" => 'class="active"'
-        ));
-        $smarty->display("tpl/nav.tpl");
-	?>
+	if(isset($_SESSION["User"])){
+		$userDto = unserialize($_SESSION["User"]);
+		$smarty->assign( "emailUser",$userDto->getEmail());
+	}
 
-		<div class="col-sm-9">
-			devlogs
-	    </div><!-- ./col-sm-9 -->
- 	<?php 
- 		$smarty->display("tpl/footer.tpl"); 
- 	?>
+	$smarty->display("tpl/topNavBar.tpl");
+
+	$smarty->assign(array(
+		"homeactive" => "",
+		"bibliographieactive" => "",
+		"devlogsactive" => 'class="active"'
+	));
+
+	$smarty->display("tpl/nav.tpl");
+	$smarty->display("tpl/devlogs.tpl");
+	$smarty->display("tpl/footer.tpl"); 
+?>
