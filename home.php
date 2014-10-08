@@ -24,22 +24,33 @@
 
 		include_once("serveur/dao/pathologieDao.php");
 		
-		
-		$pathologies = getTbale();			
-		$smarty->display("tpl/thead.tpl");
-		if(isset($_SESSION["User"])){
-			$smarty->display("tpl/search.tpl");
+		if(isset($_GET['action']) && $_GET['action'] == "autocompleteSearch"){
+			$pathologies = getTbaleFromAutocomplete();
+		}
+		else{
+			$pathologies = getTbale();	
 		}
 
-		foreach ($pathologies as $row ) {
-			$smarty->assign( "descPatho", $row[0]);
-			$smarty->assign( "descSymptome", $row[1]);
-			$smarty->assign( "nomMeridien", $row[2]);
-			$smarty->display("tpl/row.tpl");
-		}	
+		$smarty->display("tpl/thead.tpl");
+		if(isset($_SESSION["User"])){
+			$smarty->display("tpl/autocompleteSearch.tpl");			
+			$smarty->display("tpl/search.tpl");
+		}
+		if($pathologies != null){
+			foreach ($pathologies as $row ) {
+				$smarty->assign( "descPatho", $row[0]);
+				$smarty->assign( "descSymptome", $row[1]);
+				$smarty->assign( "nomMeridien", $row[2]);
+				$smarty->display("tpl/row.tpl");
+			}	
+		}
 
 		$smarty->display("tpl/tfooter.tpl");
 
+		if($pathologies == null){
+			$smarty->assign( "msg", "Sorry, Any pathologies was found corresponding to your searches.");
+			$smarty->display("tpl/noResult.tpl");
+		}
 ?>
 	    </div><!-- ./col-sm-9 -->
  	<?php 

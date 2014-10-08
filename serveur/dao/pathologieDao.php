@@ -4,6 +4,17 @@
 //include_once("../models/Pathologie.class.php");
 include_once('serveur/config/dbConfig.php');
 
+
+function getTbaleFromAutocomplete(){
+
+	$keyWords = "";
+
+	if(isset($_POST['keyWords']) ){
+		$keyWords = trim($_POST['keyWords']);		
+	}	
+
+	return getResearchResultFromKeyWords($keyWords);
+}
 function getTbale(){
 
 	$searchpatho = "";
@@ -87,6 +98,32 @@ function getResearchResult( $searchpatho, $searchsymptome, $searchmeridien){
 
 		$req->execute();	
 
+		$objreturn = $req->fetchAll();
+
+		if( $objreturn ) {
+			$res = $objreturn;
+		} 
+		return $res;
+	}
+	catch(PDOException $e){
+		die('Erreur: '.$e->getMessage());
+	}
+}
+
+
+function getResearchResultFromKeyWords( $keyWords){
+	$bdd = getDB('filerouge');
+	$res = null;
+
+	try{
+
+		$condition = "SELECT patho.desc,symptome.desc, meridien.nom FROM keySympt,keywords,symptome, symptPatho,patho,meridien WHERE keywords.idK = keySympt.idK AND keywords.name like :keywords and symptome.idS = keySympt.idS and symptPatho.idS = symptome.idS AND symptPatho.idP = patho.idP AND meridien.code = patho.mer"; 
+
+		$req = $bdd->prepare($condition);
+
+		$req->execute(array(
+		    'keywords' => "%".$keyWords."%"
+		    ));	
 		$objreturn = $req->fetchAll();
 
 		if( $objreturn ) {
