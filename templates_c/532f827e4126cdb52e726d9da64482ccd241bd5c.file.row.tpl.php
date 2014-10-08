@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-08 17:01:03
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-08 18:05:58
          compiled from "tpl\row.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:3978542feae49acc73-57829022%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '532f827e4126cdb52e726d9da64482ccd241bd5c' => 
     array (
       0 => 'tpl\\row.tpl',
-      1 => 1412777610,
+      1 => 1412784323,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'descPatho' => 0,
-    'descSymptome' => 0,
+    'typePatho' => 0,
     'nomMeridien' => 0,
   ),
   'has_nocache_code' => false,
@@ -29,7 +29,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   <th>#</th>
   <th><?php echo $_smarty_tpl->tpl_vars['descPatho']->value;?>
 </th>
-  <th><?php echo $_smarty_tpl->tpl_vars['descSymptome']->value;?>
+  <th><?php echo $_smarty_tpl->tpl_vars['typePatho']->value;?>
 </th>
   <th><?php echo $_smarty_tpl->tpl_vars['nomMeridien']->value;?>
 </th>

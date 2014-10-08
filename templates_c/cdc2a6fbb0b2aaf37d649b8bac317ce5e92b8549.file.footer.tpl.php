@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-07 13:57:53
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-08 17:57:17
          compiled from "tpl\footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:31082542e8bcb4a7d04-82250229%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cdc2a6fbb0b2aaf37d649b8bac317ce5e92b8549' => 
     array (
       0 => 'tpl\\footer.tpl',
-      1 => 1412616179,
+      1 => 1412783171,
       2 => 'file',
     ),
   ),
@@ -24,5 +24,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+ 	<script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
+  	<script type="text/javascript" src="js/search-autocomplete.js"></script>	
+
   </body>
 </html><?php }} ?>

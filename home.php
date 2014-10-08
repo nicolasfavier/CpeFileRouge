@@ -39,7 +39,7 @@
 		if($pathologies != null){
 			foreach ($pathologies as $row ) {
 				$smarty->assign( "descPatho", $row[0]);
-				$smarty->assign( "descSymptome", $row[1]);
+				$smarty->assign( "typePatho", $row[1]);
 				$smarty->assign( "nomMeridien", $row[2]);
 				$smarty->display("tpl/row.tpl");
 			}	

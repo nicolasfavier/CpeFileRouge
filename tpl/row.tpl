@@ -1,6 +1,6 @@
  <tr>
   <th>#</th>
   <th>{$descPatho}</th>
-  <th>{$descSymptome}</th>
+  <th>{$typePatho}</th>
   <th>{$nomMeridien}</th>
 </tr>
