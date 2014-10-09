@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-08 18:15:04
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-09 08:11:14
          compiled from "tpl/footer.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:262171908542e9297759a93-54178080%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c14a0a570edaae4d1e37fa2c753084cbb60d41b7' => 
     array (
       0 => 'tpl/footer.tpl',
-      1 => 1412784901,
+      1 => 1412835072,
       2 => 'file',
     ),
   ),
@@ -19,10 +19,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_542e929775de34_92735013',
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_542e929775de34_92735013')) {function content_542e929775de34_92735013($_smarty_tpl) {?>   </div><!-- ./container -->
+<?php if ($_valid && !is_callable('content_542e929775de34_92735013')) {function content_542e929775de34_92735013($_smarty_tpl) {?>  	</div><!-- ./col-sm-9 -->
+   </div><!-- ./container -->
 	<!-- jquery -->
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  	<!-- Latest compiled and minified JavaScript -->
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
 	<script type="text/javascript" src="js/bootstrap.js"></script>
  	<script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
   	<script type="text/javascript" src="js/search-autocomplete.js"></script>	

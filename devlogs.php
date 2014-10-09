@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	include("utils.php");
-	include_once("serveur/dto/UserDto.class.php");
+	include_once("serveur/dto/userDto.class.php");
 
 	$smarty = getSmarty();
 	$smarty->assign( "header","Devlogs");

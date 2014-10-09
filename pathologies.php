@@ -1,13 +1,17 @@
 <?php 
 	session_start();
 	include_once("utils.php");
-	include_once("serveur/dto/UserDto.class.php");
+	include_once("serveur/dto/userDto.class.php");
 
 	$smarty = getSmarty();
 	$smarty->assign( "header","Home");
 	if(isset($_SESSION["User"])){
 		$userDto = unserialize($_SESSION["User"]);
 		$smarty->assign( "emailUser",$userDto->getEmail());
+		$smarty->assign( "actionUser","Log In");		
+	}
+	else{
+		$smarty->assign( "emailUser","Unregistered");
 	}
 
 	$smarty->display("tpl/header.tpl");

@@ -5,7 +5,7 @@
 	if (isset($_GET['action'])) {
 		include_once('../models/User.class.php');
 		include_once("../dao/userDao.php");
-		include_once('../dto/UserDto.class.php');
+		include_once('../dto/userDto.class.php');
 
 	    if($_GET['action'] == "createUser"){
 	      $user = createUserSignUp();

@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	include("utils.php");
-	include_once("serveur/dto/UserDto.class.php");
+	include_once("serveur/dto/userDto.class.php");
 
 	$smarty = getSmarty();
 	$smarty->assign( "header","Bibliographie");
@@ -21,6 +21,6 @@
     ));
     
     $smarty->display("tpl/nav.tpl");
-    $smarty->display("tpl/Bibliographie.tpl");
+    $smarty->display("tpl/bibliographie.tpl");
 	$smarty->display("tpl/footer.tpl"); 
 ?>
