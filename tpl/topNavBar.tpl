@@ -9,7 +9,7 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{$emailUser}<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href='serveur/controllers/userController.php?action=logOut'>Log out</a></li>
+              <li><a href='serveur/controllers/userController.php?action=logOut'>{$actionUser}</a></li>
             </ul>
           </li>
         </ul>
