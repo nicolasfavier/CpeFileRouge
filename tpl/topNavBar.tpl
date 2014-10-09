@@ -5,7 +5,6 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Pathologies</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{$emailUser}<span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
