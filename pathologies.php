@@ -22,7 +22,10 @@
 	));
 
 	$smarty->display("tpl/topNavBar.tpl");
-	$smarty->display("tpl/nav.tpl");		
+	$smarty->display("tpl/nav.tpl");	
+
+	//$smarty->display("tpl/pathologie.tpl");	
+
 	$smarty->display("tpl/thead.tpl");
 
 	if(isset($_SESSION["User"])){
