@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.19, created on 2014-10-09 00:42:50
+<?php /* Smarty version Smarty-3.1.19, created on 2014-10-09 11:40:48
          compiled from "tpl\nav.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:23381542e6ed1d06c71-00650769%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2ed367ff101865b8e7fee80de6d9ece1ade75322' => 
     array (
       0 => 'tpl\\nav.tpl',
-      1 => 1412808101,
+      1 => 1412847640,
       2 => 'file',
     ),
   ),
@@ -25,8 +25,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_542e6ed1d3d768_05330489')) {function content_542e6ed1d3d768_05330489($_smarty_tpl) {?>	<br>
-	<div class="col-sm-3">
+<?php if ($_valid && !is_callable('content_542e6ed1d3d768_05330489')) {function content_542e6ed1d3d768_05330489($_smarty_tpl) {?><div class="col-sm-3">
 		<ul class="nav nav-pills nav-stacked">
 			
 			<li <?php echo $_smarty_tpl->tpl_vars['homeactive']->value;?>
