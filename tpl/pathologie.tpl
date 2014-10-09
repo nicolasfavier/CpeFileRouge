@@ -11,7 +11,8 @@
     </div>
     <div class="col-sm-2"></div>  
 		<form class="form-horizontal pull-right" role="form" method="POST" action="serveur/controllers/symptomeController.php?action=findPathoSymptome&amp;idp={$idP}">
-			<button  type="submit" class="btn btn-info">Info</button>
+			<button  type="submit" class="btn btn-info btn-xs">Info</button>
 		</form>      
   </div>
 </div>
+

@@ -10,5 +10,5 @@
   <div class="form-group">
 		<input type="text" class="form-control" name="searchmeridien" id="searchmeridien" placeholder="search Méridien"> 
   </div>  
-  <button type="submit" class="btn btn-default">Search</button>
+  <button type="submit" class="btn btn-success">Search</button>
 </form>

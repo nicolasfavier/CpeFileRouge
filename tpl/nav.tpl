@@ -1,5 +1,4 @@
-	<br>
-	<div class="col-sm-3">
+<div class="col-sm-3">
 		<ul class="nav nav-pills nav-stacked">
 			
 			<li {$homeactive}><a href="serveur/controllers/pathologieController.php">Pathologies</a></li>
