@@ -23,7 +23,7 @@
 
 	$smarty->display("tpl/topNavBar.tpl");
 	$smarty->display("tpl/nav.tpl");		
-	$smarty->display("tpl/thead.tpl");
+	//$smarty->display("tpl/thead.tpl");
 
 	if(isset($_SESSION["User"])){
 		$smarty->display("tpl/autocompleteSearch.tpl");			
@@ -39,11 +39,11 @@
 			$smarty->assign( "typePatho", $row[1]);
 			$smarty->assign( "nomMeridien", $row[2]);
 			$smarty->assign( "idP", $row[3]);
-			$smarty->display("tpl/row.tpl");
+			$smarty->display("tpl/pathologie.tpl");
 		}	
 	}
 
-	$smarty->display("tpl/tfooter.tpl");
+	//$smarty->display("tpl/tfooter.tpl");
 
 	if($pathologies == null){
 		$smarty->assign( "msg", "Sorry, Any pathologies was found corresponding to your searches.");

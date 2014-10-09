@@ -10,6 +10,10 @@
 	if(isset($_SESSION["User"])){
 		$userDto = unserialize($_SESSION["User"]);
 		$smarty->assign( "emailUser",$userDto->getEmail());
+		$smarty->assign( "actionUser","Log In");		
+	}
+	else{
+		$smarty->assign( "emailUser","Unregistered");
 	}
 
 	$smarty->display("tpl/topNavBar.tpl");
