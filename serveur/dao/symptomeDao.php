@@ -8,11 +8,13 @@ include_once('../config/dbConfig.php');
 
 		try{
 
-			$condition = "SELECT symptome.desc FROM symptPatho, symptome WHERE symptPatho.idP  =$idP and  symptome.idS  = symptPatho.idS";
+			$condition = "SELECT symptome.desc FROM symptPatho, symptome WHERE symptPatho.idP  =:idP and  symptome.idS  = symptPatho.idS";
 
 			$req = $bdd->prepare($condition);
 
-			$req->execute();	
+			$req->execute(array(
+			    'idP' => $idP
+		    ));	
 
 			$objreturn = $req->fetchAll();
 

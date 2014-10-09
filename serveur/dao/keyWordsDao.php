@@ -11,9 +11,12 @@ function getKeyWords($search){
 		if($search == null)
 			$req = $bdd->prepare("SELECT * FROM keywords");
 		else
-			$req = $bdd->prepare("SELECT * FROM keywords WHERE keywords.name like '%" . $search."%'");
+			$req = $bdd->prepare("SELECT * FROM keywords WHERE keywords.name like :search");
 
-		$req->execute();	
+		
+		$req->execute(array(
+		    'search' => "%".$search."%"
+		    ));	
 
 		$objreturn = $req->fetchAll();
 
