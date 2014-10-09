@@ -24,7 +24,7 @@
 
 	$smarty->display("tpl/topNavBar.tpl");
 	$smarty->display("tpl/nav.tpl");		
-	//$smarty->display("tpl/thead.tpl");
+	$smarty->display("tpl/Pathologieshead.tpl");
 
 	if(isset($_SESSION["User"])){
 		$smarty->display("tpl/autocompleteSearch.tpl");			
