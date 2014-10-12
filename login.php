@@ -1,4 +1,4 @@
-	<?php 
+	<?php
 		include("utils.php");
 		$smarty = getSmarty();
 		$smarty->assign( "header","Login Page");
@@ -8,6 +8,7 @@
  		if(isset($_GET['error'])){
 			$smarty->assign("error",$_GET['error']);
 			$smarty->display("tpl/error.tpl");
-  		}	
- 		$smarty->display("tpl/footer.tpl"); 
+  		}
+ 		$smarty->display("tpl/footer.tpl");
  	?>
+
