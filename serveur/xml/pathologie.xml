@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <pathologie idP="123456">
-  <nom></nom>
-  <type></type>
+  <nom>super nefaste patho</nom>
+  <type>dangereux</type>
   <meridien code="123">
-    <nom></nom>
+    <nom>meridien name</nom>
     <element></element>
-    <yin></yin>
+    <yin>0</yin>
   </meridien>
   <ListSymptomes>
     <symptome idS="6789">
-      <desc>vdsqvdsqvdasqvqds</desc>
+      <desc>pipi la nuit</desc>
     </symptome>
     <symptome idS="6790">
-      <desc>vdsqvdsqvdasqvqds</desc>
+      <desc>caca la journée</desc>
     </symptome>     
   </ListSymptomes>
 </pathologie>
