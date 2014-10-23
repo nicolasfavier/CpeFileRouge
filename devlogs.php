@@ -33,6 +33,7 @@
  	echo($flux);
 
 	echo("</div>");
+	echo("coucou");
 
 	$smarty->display("tpl/footer.tpl"); 
 ?>
