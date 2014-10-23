@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!DOCTYPE xsl:stylesheet SYSTEM "xhtml-math11-f.dtd">
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
@@ -16,7 +15,7 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
 <xsl:template match="/">
 	<html><head><title>Patho XLS </title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/></head><body><h1>Pathologie Detail</h1>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8"/></head><body><h1>Pathologie Detail</h1>
 	<div><xsl:apply-templates select="*|text()|processing-instruction()" /></div>
 	</body></html>
 </xsl:template>
