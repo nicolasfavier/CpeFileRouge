@@ -29,7 +29,7 @@
 	$smarty->display("tpl/devlogs.tpl");
 
 	echo("<div>");
- 	$flux = file_get_contents("http://localhost:8080/accuponcteur/synthetiseurFluxHtml");
+ 	$flux = file_get_contents("http://localhost:8080/accuponcteur/synthetiseurFlux?nbFlux=5&format=html");
  	echo($flux);
 
 	echo("</div>");
