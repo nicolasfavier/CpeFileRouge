@@ -9,10 +9,10 @@
   </meridien>
   <ListSymptomes>
     <symptome idS="6789">
-      <desc>pipi la nuit</desc>
+      <desc>Faire pipi la nuit.</desc>
     </symptome>
     <symptome idS="6790">
-      <desc>caca la journée</desc>
+      <desc>Avoir des douleurs aux ventre.</desc>
     </symptome>     
   </ListSymptomes>
 </pathologie>

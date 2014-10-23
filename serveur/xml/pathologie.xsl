@@ -15,13 +15,14 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema">
   escape-uri-attributes="yes" />
 
 <xsl:template match="/">
-	<html><body><h1>Pathologie Detail</h1>
-	<xsl:apply-templates select="*|text()|processing-instruction()" />
+	<html><head><title>Patho XLS </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/></head><body><h1>Pathologie Detail</h1>
+	<div><xsl:apply-templates select="*|text()|processing-instruction()" /></div>
 	</body></html>
 </xsl:template>
 
 <xsl:template match="pathologie">
-	Votre pathologie est : <xsl:value-of select="nom"/> de type <xsl:value-of select="type"/>
+	 Votre pathologie est : <xsl:value-of select="nom"/> de type <xsl:value-of select="type"/>
 		<xsl:apply-templates select="meridien" />
 		<xsl:apply-templates select="ListSymptomes" />
 </xsl:template>
