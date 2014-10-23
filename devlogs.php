@@ -27,5 +27,12 @@
 
 	$smarty->display("tpl/nav.tpl");
 	$smarty->display("tpl/devlogs.tpl");
+
+	echo("<div>");
+ 	$flux = file_get_contents("http://localhost:8080/accuponcteur/synthetiseurFluxHtml");
+ 	echo($flux);
+
+	echo("</div>");
+
 	$smarty->display("tpl/footer.tpl"); 
 ?>
